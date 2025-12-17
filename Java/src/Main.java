@@ -10,5 +10,7 @@ public class Main {
 
         System.out.println("Elige al corredor al que darás instrucciones: ");
         Metodos.nombresCorredores(nombreIngeniero);
+
+        System.out.println();
     }
 }
