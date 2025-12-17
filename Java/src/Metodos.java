@@ -77,16 +77,30 @@ public class Metodos {
             int posicionesPerdidas = random.nextInt(0,4);
             int posicionesGanadas = random.nextInt(0, 3);
             int posicionesObtenidasTemerarias = random.nextInt(1, 5);
-
+            int nivelEstresReducido = random.nextInt(30, 50);
+            int nivelEstresObtenido = random.nextInt(20, 40);
+            int nivelEstresTemerariamente = random.nextInt(30, 60);
             if (instruccionElegida.equalsIgnoreCase(opcion1)) {
                 if (posicionesPerdidas == 0) {
+                    if (nivelEstres >= 0) {
+                        nivelEstres -= nivelEstresReducido;
+                    } else if (nivelEstres < 0) {
+                        nivelEstres = 0;
+                    }
                     System.out.println(corredorSeleccionado + " no ha perdido posiciones, se mantiene en " + posicion + " lugar");
                     System.out.println(corredorSeleccionado + " ha reducido su estrés");
                 } else {
+                    if (nivelEstres >= 0) {
+                        nivelEstres -= nivelEstresReducido;
+                    } else if (nivelEstres < 0) {
+                        nivelEstres = 0;
+                    }
                     posicion -= posicionesPerdidas;
                     System.out.println(corredorSeleccionado + " ha sido adelantado y ahora está en " + posicion + " lugar");
                     System.out.println(corredorSeleccionado + " ha reducido su estrés");
                 }
+            } else if (instruccionElegida.equalsIgnoreCase(opcion2)) {
+
             }
         }
     }
