@@ -5,10 +5,10 @@ public class Metodos {
 
     public static String nombresCorredores (String nombreIngeniero) {
         Scanner sc = new Scanner(System.in);
-        String nombre1 = "Hamilton";
-        String nombre2 = "Verstappen";
-        String nombre3 = "Schumacher";
-        String nombre4 = "Fernando Alonso";
+        String nombre1 = "Rayo Mcqueen";
+        String nombre2 = "Doc Hudson";
+        String nombre3 = "Francesco Bernoulli";
+        String nombre4 = "Jackson Storm";
         System.out.println("1. " + nombre1);
         System.out.println("2. " + nombre2);
         System.out.println("3. " + nombre3);
