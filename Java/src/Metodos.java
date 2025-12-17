@@ -78,29 +78,50 @@ public class Metodos {
             int posicionesGanadas = random.nextInt(0, 3);
             int posicionesObtenidasTemerarias = random.nextInt(1, 5);
             int nivelEstresReducido = random.nextInt(30, 50);
-            int nivelEstresObtenido = random.nextInt(20, 40);
-            int nivelEstresTemerariamente = random.nextInt(30, 60);
+            int nivelEstresObtenido = random.nextInt(20, 31);
+            int nivelEstresTemerariamente = random.nextInt(30, 61);
+
             if (instruccionElegida.equalsIgnoreCase(opcion1)) {
                 if (posicionesPerdidas == 0) {
-                    if (nivelEstres >= 0) {
-                        nivelEstres -= nivelEstresReducido;
-                    } else if (nivelEstres < 0) {
-                        nivelEstres = 0;
-                    }
+                    nivelEstres -= nivelEstresReducido;
                     System.out.println(corredorSeleccionado + " no ha perdido posiciones, se mantiene en " + posicion + " lugar");
                     System.out.println(corredorSeleccionado + " ha reducido su estrés");
-                } else {
-                    if (nivelEstres >= 0) {
-                        nivelEstres -= nivelEstresReducido;
-                    } else if (nivelEstres < 0) {
+                    if (nivelEstres < 0) {
                         nivelEstres = 0;
                     }
-                    posicion -= posicionesPerdidas;
+                } else {
+                    nivelEstres -= nivelEstresReducido;
+                    posicion += posicionesPerdidas;
                     System.out.println(corredorSeleccionado + " ha sido adelantado y ahora está en " + posicion + " lugar");
                     System.out.println(corredorSeleccionado + " ha reducido su estrés");
+                    if (nivelEstres < 0) {
+                        nivelEstres = 0;
+                    }
                 }
-            } else if (instruccionElegida.equalsIgnoreCase(opcion2)) {
 
+            } else if (instruccionElegida.equalsIgnoreCase(opcion2)) {
+                if (posicionesGanadas == 0) {
+                    nivelEstres += nivelEstresObtenido;
+                    System.out.println(corredorSeleccionado + " no ha logrado adelantar a nadie, se mantiene en " + posicion + " lugar");
+                    System.out.println("Sin embargo, su estrés ha aumentado");
+                    if (nivelEstres > 100) {
+                        nivelEstres = 100;
+                    }
+                } else {
+                    posicion -= posicionesGanadas;
+                    nivelEstres += nivelEstresObtenido;
+                    if (posicion < 1) {
+                        posicion = 1;
+                    }
+                    System.out.println(corredorSeleccionado + " ha logrado adelantar y ahora se encuentra en " + posicion + " lugar, sigue así!");
+                    System.out.println("El estrés de " + corredorSeleccionado + " ha aumentado");
+                    if (nivelEstres > 100) {
+                        nivelEstres = 100;
+                    }
+                }
+
+            } else if (instruccionElegida.equalsIgnoreCase(opcion3)) {
+                
             }
         }
     }
