@@ -76,7 +76,7 @@ public class Metodos {
             String instruccionElegida = sc.next();
             int posicionesPerdidas = random.nextInt(0,4);
             int posicionesGanadas = random.nextInt(0, 3);
-            int posicionesObtenidasTemerarias = random.nextInt(1, 5);
+            int posicionesObtenidasTemerarias = random.nextInt(2, 5);
             int nivelEstresReducido = random.nextInt(30, 50);
             int nivelEstresObtenido = random.nextInt(20, 31);
             int nivelEstresTemerariamente = random.nextInt(30, 61);
@@ -121,7 +121,12 @@ public class Metodos {
                 }
 
             } else if (instruccionElegida.equalsIgnoreCase(opcion3)) {
-                
+                posicion += posicionesObtenidasTemerarias;
+                nivelEstres += nivelEstresTemerariamente;
+
+                System.out.println(corredorSeleccionado + " ha hecho unas cuantas maniobras poniendo en riesgo su integridad física pero ha logrado adelantar puestos");
+                System.out.println("Ahora " + corredorSeleccionado + " se encuentra en " + posicion + " lugar");
+                System.out.println("Su estrés ha aumentado considerablemente");
             }
         }
     }
