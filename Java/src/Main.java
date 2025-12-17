@@ -9,8 +9,12 @@ public class Main {
         String nombreIngeniero = sc.next();
 
         System.out.println("Elige al corredor al que darás instrucciones: ");
-        Metodos.nombresCorredores(nombreIngeniero);
+        String corredorSeleccionado = Metodos.nombresCorredores(nombreIngeniero);
 
-        System.out.println();
+        System.out.println("=======================");
+        System.out.println("   INICIO DE CARRERA   ");
+        System.out.println("=======================");
+
+        Metodos.inicioCarrera(nombreIngeniero, corredorSeleccionado);
     }
 }
