@@ -62,18 +62,22 @@ public class Metodos {
                 "Si el nivel de estrés llega a más de 80 " + corredorSeleccionado + " podrá chocarse y la carrera finalizará." );
 
         int nivelEstres = 10;
+        int accionesRealizadas = 0;
+        int maxAcciones = 20;
         boolean carrera = true;
         String opcion1 = "Paciente";
         String opcion2 = "Agresivo";
         String opcion3 = "Temerario";
 
-        while (carrera) {
+        while (accionesRealizadas < maxAcciones) {
+
             System.out.println("Cómo quieres que actúe " + corredorSeleccionado + "?");
             System.out.println(opcion1);
             System.out.println(opcion2);
             System.out.println(opcion3);
 
             String instruccionElegida = sc.next();
+
             int posicionesPerdidas = random.nextInt(0,4);
             int posicionesGanadas = random.nextInt(0, 3);
             int posicionesObtenidasTemerarias = random.nextInt(2, 5);
@@ -127,6 +131,21 @@ public class Metodos {
                 System.out.println(corredorSeleccionado + " ha hecho unas cuantas maniobras poniendo en riesgo su integridad física pero ha logrado adelantar puestos");
                 System.out.println("Ahora " + corredorSeleccionado + " se encuentra en " + posicion + " lugar");
                 System.out.println("Su estrés ha aumentado considerablemente");
+            }
+
+            accionesRealizadas++;
+
+            if (nivelEstres > 80) {
+                int probabilidadChoque = random.nextInt(1, 101); // 1 a 100
+                if (probabilidadChoque <= 40) {
+                    System.out.println("CHOQUE EN MEDIO DE LA CARRERA!");
+                    System.out.println(corredorSeleccionado + " ha perdido el control del vehículo debido al estrés acumulado!");
+                    System.out.println("LA CARRERA HA TERMINADO ");
+                    System.out.println("Posición final: " + posicion);
+                    System.out.println("Trata de ser más precavido la próxima vez " + nombreIngeniero + " o volverás a generar un accidente a tu corredor");
+                    return;
+                }
+
             }
         }
     }
