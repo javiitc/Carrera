@@ -145,8 +145,20 @@ public class Metodos {
                     System.out.println("Trata de ser más precavido la próxima vez " + nombreIngeniero + " o volverás a generar un accidente a tu corredor");
                     return;
                 }
-
             }
         }
+
+        System.out.println("============ FIN DE LA CARRERA ============");
+        System.out.println("Posición final: " + posicion);
+        if (posicion == 1) {
+            System.out.println("Excelente! " + corredorSeleccionado + "ha ganado la carrera gracias a tus instrucciones!" + nombreIngeniero + " sigue así y tu nombre será reconocido globalmente! ");
+        } else if (posicion <= 3) {
+            System.out.println("Gran trabajo, " + nombreIngeniero + "! " + corredorSeleccionado + " has quedado entre los tres primeros!");
+        } else if (posicion <= 8) {
+            System.out.println("Buen trabajo, " + nombreIngeniero + ". " + corredorSeleccionado + " has tenido un buen desempeño, la próxima la ganarás!");
+        } else {
+            System.out.println("Quizá esto no es lo tuyo, " + nombreIngeniero + ".");
+        }
+
     }
 }
