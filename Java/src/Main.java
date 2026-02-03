@@ -15,6 +15,8 @@ public class Main {
         System.out.println("   INICIO DE CARRERA   ");
         System.out.println("=======================");
 
-        Metodos.inicioCarrera(nombreIngeniero, corredorSeleccionado);
+        int posicion = Metodos.inicioCarrera(nombreIngeniero, corredorSeleccionado);
+
+        Metodos.Carrera(nombreIngeniero, corredorSeleccionado, posicion);
     }
 }
